@@ -59,6 +59,7 @@ function CreatePage(props) {
                 placeholder={"Start Posting Something"}
                 onEditorChange={onEditorChange}
                 onFilesChange={onFilesChange}
+                value={"Create"}
             />
 
             <Form onSubmit={onSubmit}>

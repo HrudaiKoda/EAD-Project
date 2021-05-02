@@ -12,7 +12,7 @@ import PostPage from "./views/PostPage/PostPage";
 import BlogPage from "./views/BlogPage/BlogPage";
 import Blogsearch from "./views/Blogsearch/Blogsearch";
 import CreateBlogPage from "./views/BlogPage/Section.js/CreatePage";
-import EditPage from "./views/Blogsearch/Section.js/EditPage.js";
+import EditPage from "./views/BlogEdit/EditPage.js";
 import Payment from "./views/Payment/Payment";
 import DeletePage from "./views/BlogDelete/DeletePage"
 

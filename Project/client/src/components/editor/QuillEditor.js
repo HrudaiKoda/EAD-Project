@@ -3,6 +3,7 @@ import ReactQuill, { Quill } from 'react-quill';
 import "react-quill/dist/quill.snow.css";
 
 import axios from 'axios';
+var con = "<p>ki</p>";
 const __ISMSIE__ = navigator.userAgent.match(/Trident/i) ? true : false;
 
 // Quill.register('modules/clipboard', PlainClipboard, true);
@@ -197,15 +198,21 @@ class QuillEditor extends React.Component {
     onFilesChange;
     onPollsChange;
     _isMounted;
-
     constructor(props) {
         super(props);
-
+        console.log(this.props);
+        if(this.props.value !== "Create"){        
         this.state = {
-            editorHtml: __ISMSIE__ ? "<p>&nbsp;</p>" : "",
+            editorHtml: __ISMSIE__ ? "<p>&nbsp</p>" : this.props.value,
             files: [],
         };
-
+        }
+        else{
+            this.state = {
+                editorHtml: __ISMSIE__ ? "<p>&nbsp</p>" : "",
+                files: [],
+            };  
+        }
         this.reactQuillRef = null;
 
         this.inputOpenImageRef = React.createRef();
@@ -325,7 +332,6 @@ class QuillEditor extends React.Component {
                 })
         }
     }
-
     insertFile = (e) => {
         e.stopPropagation();
         e.preventDefault();
@@ -361,7 +367,7 @@ class QuillEditor extends React.Component {
                 })
         }
     };
-
+    
     render() {
         return (
             <div>
@@ -391,7 +397,6 @@ class QuillEditor extends React.Component {
                     <button className="ql-clean" />
 
                     
-
                 </div>
                 <ReactQuill
                     ref={(el) => { this.reactQuillRef = el }}
