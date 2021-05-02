@@ -37,7 +37,7 @@ jobs:
       run: |
         # Build and test the project, then
         # deploy to Azure Web App.
-        npm install
+        /Project/npm install
         npm run build --if-present
         npm run test --if-present
         - name: add process.json
