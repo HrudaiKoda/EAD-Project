@@ -37,6 +37,7 @@ jobs:
       run: |
         # Build and test the project, then
         # deploy to Azure Web App.
+        npm install
         cd client
         npm install 
         cd ..
