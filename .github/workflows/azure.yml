@@ -38,6 +38,9 @@ jobs:
         # Build and test the project, then
         # deploy to Azure Web App.
         npm install
+        cd client
+        npm install 
+        cd ..
         npm run dev --if-present
         - name: add process.json
           run: |
